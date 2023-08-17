@@ -9,19 +9,19 @@
             Dado seleções de cor, tamanho e quantidade devem ser obrigatórios
 
             Cenário: Produto válido
-            Quando eu selecionar o "produto", "quantidade"
-            E o "tamanho"
-            Então deve exibir uma opção "adicionar ao carrinho"
+            Quando eu selecionar o "produto", "quantidade" e "tamanho"
+            E clicar no botão adicinar ao carrinho
+            Então deve exibir uma opção "produto adicionado com sucesso"
 
             Cenário: Produto inválido
-            Quando eu selecionar o "produto"
-            E o "tamanho"
-            Então deve exibir uma mensagem "escolha a quantidade"
+            Quando eu selecionar o "produto" e "tamanho"
+            E clicar no botão adicionar ao carrinho
+            Então deve exibir uma mensagem de alerta "produto inválido, selicione a quantidade"
 
             Cenário: Produto inválido
-            Quando eu selecionar "produto"
-            E "quantidade"
-            Então deve exibir uma mensagem "escolha o tamanho"
+            Quando eu selecionar "produto", "quantidade"
+            E clicar no botão adicionar ao carrinho
+            Então deve exibir uma mensagem de alerta "produto inválido, selicione o tamanho"
 
             Esquema do Cenário: Remover produtos do carrinho
             Quando eu selecionar o <produto>
@@ -94,15 +94,16 @@
             Então deve exibir uma mensagem de alerta "campos obrigatórios não preenchidos"
 
             Esquema do Cenário: Cadastrar multiplos clientes
-            Quando eu preencher todos os campos <obrigatorios>
-            E o email ser <valido>
+            Quando eu preencher <nome>, <sobrenome>, <pais>, <endereco>, <cidade>, <cep> e <email>
+            E o clicar no botão concluir cadastro
             Então deve exibir a <mensagem> de sucesso
 
             Exemplos:
-            | obrigatorios | valido                 | mensagem                         |
-            | "Nome"       | "leonardo@ebac.com.br" | "Cadastro concluido com sucesso" |
-            | "Sobrenome"  | "leandro@ebac.com.br"  | "Cadastro concluido com sucesso" |
-            | "CEP"        | "jota@ebac.com.br"     | "Cadastro concluido com sucesso" |
+            | nome       | sobrenome | Pais     | endereço               | cidade           | cep          | email                  |
+            | "leonardo" | "silva"   | "brasil" | "rua nove de julho"    | "sao paulo       | 08262-166"   | "leonardo@ebac.com.br" |
+            | "lenadro"  | "alves"   | "brasil" | "rua das mantiqueiras" | "sao paulo"      | "088123-661" | "lenadro@ebac.cob.br"  |
+            | "vitoria"  | "pardini" | "brasil" | "barra da tijuca"      | "rio de janeiro" | "09321-161"  | "vitoria@ebac.com.br"  |
+
 
 
 
